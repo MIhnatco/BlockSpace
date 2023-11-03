@@ -2,6 +2,14 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    
+
+}
+
+    .container {
+        width: 900px;
+        max-width: 900px;
+        margin: 0 auto;
 }
 
 header {
@@ -11,9 +19,38 @@ header {
     display: flex;
     align-items: center;
     position: fixed;
-    width: 100%;
+    width: inherit;
 }
 
 #blog-list {
     padding: 30px 10px 10px;
+}
+
+form {
+    padding: 60px 10px 10px;
+}
+
+/* 
+Challenge: our form is hideous! Make it less hideous :P
+
+* Lay out the elements in a nicer way, maybe vertically. 
+  (CSS Grid or Flexbox should make this easy)
+* Add some background color to separate it from the posts
+* Style the button however you'd like.
+*/
+
+form {
+    padding: 60px 10px 10px;
+    display: grid;
+    background-color: lightblue;
+}
+
+input#post-title, textarea#post-body {
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
