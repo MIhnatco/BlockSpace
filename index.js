@@ -27,16 +27,6 @@ document.getElementById('new-post').addEventListener("submit", (e) => {
         body: postBody
       }
 
-      /**
-       * Challenge: Send this off to the server!
-       * 
-       * 1. BaseURL: https://apis.scrimba.com/jsonplaceholder/
-       * 2. Endpoint: /posts
-       * 3. method: ???
-       * 4. Request body: ??? (Remember to turn it into JSON)
-       * 5. Headers: ??? (Check the JSON Placeholder API docs or past casts for help)
-       */
-
       const options = {
         method: "POST", 
         body: JSON.stringify(post), 
@@ -47,7 +37,19 @@ document.getElementById('new-post').addEventListener("submit", (e) => {
 
       fetch('https://apis.scrimba.com/jsonplaceholder/posts', options )
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+          console.log(data)
+            /**
+             * Challenge: Update the DOM with the new blog entry
+             */
+
+            document.querySelector('#blog-list').innerHTML = `
+                <h3>${data.title}</h3>
+                <p>${data.body}</p>
+                <hr>
+                ${document.querySelector('#blog-list').innerHTML}
+            `
+        })
 })
 
 
